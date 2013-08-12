@@ -1,18 +1,93 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4451" systemVersion="13A461" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4488.2" systemVersion="13A538g" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3676"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3715.3"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
+        <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="NNViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="otO-4I-U5o"/>
+                        <viewControllerLayoutGuide type="bottom" id="ckv-3Z-EpE"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hHr-wZ-mCE">
+                                <rect key="frame" x="83" y="390" width="154" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Schedule Notifications">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="scheduleTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="sFM-GX-PCa"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Testing the Aperture Science emergency notification protocol" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wYI-ca-Ttf">
+                                <rect key="frame" x="10" y="75" width="300" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="zNp-DJ-ehC"/>
+                                </connections>
+                            </textField>
+                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CJ3-lO-dWQ">
+                                <rect key="frame" x="0.0" y="170" width="320" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="SG6-vY-Be0"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="8LS-EC-twG"/>
+                                </connections>
+                            </pickerView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m20-gz-OAM">
+                                <rect key="frame" x="0.0" y="126" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="xy6-7m-wdL"/>
+                                    <barButtonItem title="How Many?" id="Wmh-Fe-fnf"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="0vv-sS-JJf"/>
+                                    <barButtonItem title="How Often?" id="2kY-Su-iyi"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="keq-2c-68f"/>
+                                </items>
+                            </toolbar>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KIQ-GY-nUa">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Notification Sender" id="ZU1-6g-GUv"/>
+                                </items>
+                            </navigationBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fgK-Zx-jht">
+                                <rect key="frame" x="0.0" y="332" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="sgO-iF-eXi"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem id="qAX-qr-LZr"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ckv-3Z-EpE" firstAttribute="top" secondItem="hHr-wZ-mCE" secondAttribute="bottom" constant="148" id="3VO-Iu-tYU"/>
+                            <constraint firstAttribute="centerX" secondItem="fgK-Zx-jht" secondAttribute="centerX" constant="-1" id="NmM-Mn-vzV"/>
+                            <constraint firstAttribute="trailing" secondItem="fgK-Zx-jht" secondAttribute="trailing" constant="-1" id="TSZ-9Q-Rnr"/>
+                            <constraint firstItem="hHr-wZ-mCE" firstAttribute="top" secondItem="fgK-Zx-jht" secondAttribute="bottom" constant="14" id="ayf-0l-i9q"/>
+                            <constraint firstItem="CJ3-lO-dWQ" firstAttribute="top" secondItem="m20-gz-OAM" secondAttribute="bottom" id="dfW-VV-SiB"/>
+                            <constraint firstItem="CJ3-lO-dWQ" firstAttribute="top" secondItem="otO-4I-U5o" secondAttribute="bottom" constant="150" id="ek9-i2-bgV"/>
+                            <constraint firstAttribute="centerX" secondItem="CJ3-lO-dWQ" secondAttribute="centerX" id="xmz-ne-lBM"/>
+                            <constraint firstItem="fgK-Zx-jht" firstAttribute="top" secondItem="CJ3-lO-dWQ" secondAttribute="bottom" id="xt2-VZ-f3x"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="alertBody" destination="wYI-ca-Ttf" id="UlB-ZO-laG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
