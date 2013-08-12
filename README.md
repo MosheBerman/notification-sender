@@ -9,7 +9,7 @@ This demo was built against the iOS 7 SDK.
 
 Notes:
 ---
-Don't mind the aweful autolayout in the nib. I'm still getting the hang of it.
+Don't mind the awful autolayout in the nib. I'm still getting the hang of it.
 
 License:
 ---
